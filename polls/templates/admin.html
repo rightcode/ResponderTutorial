@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<br><br>
+
+<div align="center">
+    <div class="card w-50" >
+      <h5 class="card-header bg-primary text-white text-center">Responder Administration</h5>
+      <div class="card-body" align="left">
+          <form action="/ad_login" method="post">
+              <p>Username</p>
+              <input type="text" name="username" size="30">
+              <br>
+              <br>
+              <p>Password</p>
+              <input type="password" name="password" size="30">
+              <br>
+              {% for error_message in error_messages %}
+                <p class="text-danger">{{error_message}}</p> <!-- New: ログイン失敗ならエラーメッセージを表示させる -->
+              {% endfor %}
+              <br>
+              <div align="center">
+                  <input class="btn btn-primary" type="submit" name="submit" value="Login">
+              </div>
+          </form>
+      </div>
+    </div>
+</div>
+
+{% endblock %}

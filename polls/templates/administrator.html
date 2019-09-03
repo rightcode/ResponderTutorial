@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+{% block content %}
+<br>
+<div class="row">
+    <div class="col-md-10">
+        <h1>Polls Application Administrator</h1>
+    </div>
+    <div class="col-md-2">
+        <form action="/logout" method="post">
+            <input type="hidden" name="token" value="{{auth_user}}">
+            <button type="submit" class="btn btn-primary">Logout</button>
+        </form>
+    </div>
+</div>
+<hr>
+<p>Hi, {{auth_user}}.</p>
+<br>
+
+<div class="row">
+    <div class="col-md-9">
+        <br>
+        <h4>Question &nbsp; <a href="/add_Question" class="btn-warning btn-sm">Add</a></h4>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+                <th>id</th>
+                <th scope="col">question_text</th>
+                <th scope="col">pub_date</th>
+                <th scope="col">Published recently?</th> <!-- New -->
+                <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for question in questions%}
+            <tr>
+                <th scope="row">{{question['id']}}</th>
+                <td>{{question['question_text']}}</td>
+                <td>{{question['pub_date']}}</td>
+                <td>  <!-- New -->
+                    {% if not was_recently[loop.index-1] %}
+                    <div class="text-danger"><strong>×</strong></div>
+                    {% else %}
+                    <div class="text-success"><strong>○</strong></div>
+                    {% endif %}
+
+                </td>
+                <td>
+                    <a href="/change/question/{{question['id']}}" class="btn-secondary btn-sm">Change</a>
+                    <a href="/delete/question/{{question['id']}}" class="btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+
+        <br>
+        <h4>Choice &nbsp; <a href="/add_Choice" class="btn-warning btn-sm">Add</a></h4>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+                <th>id</th>
+                <th scope="col">question</th>
+                <th scope="col">choice_text</th>
+                <th scope="col">votes</th>
+                <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for choice in choices%}
+            <tr>
+                <th scope="row">{{choice['id']}}</th>
+                <td>{{choice['question']}}</td>
+                <td>{{choice['choice_text']}}</td>
+                <td>{{choice['votes']}}</td>
+                <td>
+                    <a href="/change/choice/{{choice['id']}}" class="btn-secondary btn-sm">Change</a>
+                    <a href="/delete/choice/{{choice['id']}}" class="btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+    </div>
+    <div class="col-md-3">
+        <br><br>
+        <form action="" method="get">
+            <input type="text" size="15" name="q_str">&nbsp;
+            <button type="submit" class="btn btn-secondary btn-sm">Search</button>
+        </form>
+        <br>
+        <div class="list-group">
+            <div class="list-group-item list-group-item-info">質問フィルタ</div>
+            <a href="/admin_top" class="list-group-item list-group-item-action">すべて</a>
+            <a href="?filter=0" class="list-group-item list-group-item-action">今日</a>
+            <a href="?filter=7" class="list-group-item list-group-item-action">過去７日間</a>
+            <a href="?filter=31" class="list-group-item list-group-item-action">過去1ヶ月</a>
+            <a href="?filter=365" class="list-group-item list-group-item-action">過去1年</a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %}
+<br>
+<h1>Welcome to Polls Application!</h1>
+<hr>
+<p>
+    This is a simple polls application from Django Tutorial
+    (URL: <a href="https://docs.djangoproject.com/ja/2.2/intro/tutorial01/">https://docs.djangoproject.com/ja/2.2/intro/tutorial01/</a>)
+</p>
+
+<br>
+<br>
+<h3>最新の質問</h3>
+{% if questions|length == 0 %}
+    <p class="text-danger">No polls are available.</p>
+{% endif %}
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">質問</th>
+        <th scope="col">公開日</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for question in questions %}
+    <tr>
+        <td>
+            <a href="/detail/{{question['id']}}">{{question['question_text']}}</a>
+            {% if emphasized[loop.index-1]%}
+                <span class="badge badge-info"> new! </span>
+            {% endif %}
+        </td>
+        <td>{{pub_date[loop.index-1]}}</td>
+    </tr>
+    {% endfor%}
+    </tbody>
+</table>
+
+{% endblock %}

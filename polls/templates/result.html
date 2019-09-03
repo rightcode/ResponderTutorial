@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+<br>
+<a href="/" class="btn btn-primary">戻る</a>
+<h2>{{question['question_text']}}</h2>
+<hr>
+<p>質問公開日：{{question['pub_date']}}</p>
+<br>
+<h3>現在の投票結果</h3>
+{% for choice in choices %}
+    <p><span class="badge badge-info">{{choice['votes']}}</span> &nbsp; {{choice['choice_text']}}</p>
+{% endfor %}
+
+{% for line in svg %}
+    {% autoescape false %}{{line}}{% endautoescape %}
+{% endfor %}
+
+{% endblock %}

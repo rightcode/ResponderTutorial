@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<br><br>
+<h3>Change {{table_name}}</h3>
+<a class="btn-sm btn-primary" href="/admin_top">Back to Admin top</a>
+<br>
+<br>
+<form action="/change/{{table_name}}/{{field['id']}}" method="post">
+    <p>id : {{field['id']}}</p>
+    <div class="row">
+        <div class="col-sm-4"><p>{{table_name}}_text</p></div>
+        <div class="col-sm-8">
+            {% set text = table_name + '_text' %}
+            <p><input type="text" name="{{table_name}}_text" value="{{field[text]}}"></p>
+        </div>
+    </div>
+    <br>
+    {% if table_name == 'question' %}
+    <div class="row">
+        <div class="col-sm-4"><p>pub_date</p></div>
+        <div class="col-sm-8">
+            <p>
+                <input type="text" name="year" value="{{field['pub_date'].year}}" size="4">年
+                <input type="text" name="month" value="{{field['pub_date'].month}}" size="2">月
+                <input type="text" name="day" value="{{field['pub_date'].day}}" size="2">日  &nbsp;
+                <input type="text" name="hour" value="{{field['pub_date'].hour}}" size="2">:
+                <input type="text" name="minute" value="{{field['pub_date'].minute}}" size="2">:
+                <input type="text" name="second" value="{{field['pub_date'].second}}" size="2">
+
+            </p>
+            <br>
+            {% for error_message in error_messages %}
+                <p class="text-danger">{{error_message}}</p>
+            {% endfor %}
+            <br>
+        </div>
+    </div>
+    {% endif %}
+    <hr>
+    <input class="btn btn-warning" type="submit" name="submit" value="Change {{teble_name}}">
+</form>
+
+{% endblock %}

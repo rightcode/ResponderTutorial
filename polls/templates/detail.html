@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+<br>
+<a href="/" class="btn btn-primary">戻る</a>
+<h2>{{question['question_text']}}</h2>
+<hr>
+<p>質問公開日：{{question['pub_date']}}</p>
+<br>
+<form action="/vote/{{question['id']}}" method="post">
+    {% for choice in choices %}
+        <p><input type="radio" name="choice" value="{{choice['id']}}" {% if loop.first %} checked {% endif %}> {{choice['choice_text']}}</p>
+    {% endfor %}
+    <button type="submit" name="submit" class="btn btn-success">投票する</button>
+</form>
+
+{% endblock %}

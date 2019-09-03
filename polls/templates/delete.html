@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<br><br>
+<h3 class="text-danger">WARNING!</h3>
+<hr>
+<p>This {{table_name}} will be deleted, Are you sure?</p>
+<a class="btn-sm btn-primary" href="/admin_top">Back to Admin top</a>
+<br>
+<br>
+<br>
+<form action="/delete/{{table_name}}/{{field['id']}}" method="post">
+     <div class="row">
+        <div class="col-sm-4"><p>id</p></div>
+        <div class="col-sm-8">
+            <p>{{field['id']}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"><p>{{table_name}}_text</p></div>
+        <div class="col-sm-8">
+            {% set text = table_name + '_text' %}
+            <p>{{field[text]}}</p>
+        </div>
+    </div>
+        <br>
+    {% if table_name == 'question' %}
+    <div class="row">
+        <div class="col-sm-4"><p>pub_date</p></div>
+        <div class="col-sm-8">
+            <p>{{field['pub_date']}}</p>
+            <br>
+            <br>
+        </div>
+    </div>
+    {% endif %}
+    <hr>
+    <input class="btn btn-warning" type="submit" name="submit" value="Delete {{table_name}}">
+</form>
+
+{% endblock %}

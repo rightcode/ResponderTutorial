@@ -1,0 +1,33 @@
+<!-- templates/layout.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!--    <link rel="stylesheet" href="{{ static + 'style.css' }}">-->
+    <link rel="stylesheet" href="{{ 'style.css' | static}}">
+
+    <meta charset="UTF-8">
+    <title>Sample Polls Application</title>
+</head>
+<body style="background-color: #eeeeee">
+<div style="display: flex; flex-direction: column; min-height: 80vh"> <!-- New -->
+    <div class="container">
+
+    {% block content %}
+    <!-- メインコンテンツ -->
+    {% endblock %}
+
+    </div>
+</div>  <!-- New -->
+<br>
+<hr>
+<footer>
+    <br>
+    <div align="center">
+        <p>Copyright &copy; RightCode Inc. All right reserved.</p>
+        <p>Powered by <a href="https://python-responder.org/en/latest/" class="text-secondary">Responder - A familiar HTTP Service Framework</a></p>
+        <br>
+    </div>
+</footer>
+</body>
+</html>
