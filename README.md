@@ -3,12 +3,14 @@ Polls Application with Responder
 [![python](https://img.shields.io/badge/Python-3.6%20|%203.7-blueviolet.svg?style=flat)](https://www.python.org/downloads/release/python-368/)
 [![responder](https://img.shields.io/badge/Responder-1.3.1-lightgray.svg?style=flat)](https://python-responder.org/en/latest/)
 [![license](https://img.shields.io/badge/LICENSE-MIT-informational.svg?style=flat)](https://python-responder.org/en/latest/)
-
+  
+(最終更新：2019.09.04)  
+  
 このアプリケーションは株式会社ライトコードで運営するブログにて連載している「Responderを使ってDjangoチュートリアルをやってみた」で作成したものです。
   
-Responder v.1.3.1で作成したアプリケーションのため、バージョンが異なるとうまく動作しない場合があります。
+Responder(ver. 1.3.1)で作成したアプリケーションのため、バージョンが異なるとうまく動作しない場合があります。
   
-本コードは下記に示す「[番外編 - さらなるアプリ改良](https://rightcode.co.jp/blog/information-technology/responder-django-tutorial-8)」
+本コードは下記に示す「番外編 - さらなるアプリ改良 (近日公開)」
 で作成された最終的なコードです。
     
 ## 開発
@@ -22,11 +24,11 @@ Responder v.1.3.1で作成したアプリケーションのため、バージョ
 [第2回 - データベース・モデル構築編](https://rightcode.co.jp/blog/information-technology/responder-django-tutorial-2-1)   
 [第3回 - データベース操作編](https://rightcode.co.jp/blog/information-technology/responder-django-tutorial-3-1)   
 [第4回 - 公開ビュー作成編](https://rightcode.co.jp/blog/information-technology/responder-django-tutorial-4)   
-第5回 - 自動テスト導入編   
-第6回 - 静的ファイル管理編   
-第7回 - adminページ改良編   
+第5回 - 自動テスト導入編 (近日公開)   
+第6回 - 静的ファイル管理編 (近日公開)   
+第7回 - adminページ改良編 (近日公開)   
   
-番外編 - さらなるアプリ改良
+番外編 - さらなるアプリ改良 (近日公開)
 
 ## アプリケーションの起動(Localhost)
 ```bash
@@ -35,7 +37,7 @@ $ python run.py
 ```
 
 ## 注意
-本アプリケーションはResponder ver.**1.3.1**で実装されています。
+本アプリケーションはResponder(ver.**1.3.1**)で実装されています。
 エラーハンドリングについては、お手持ちのデフィルトResponder環境では動作しません。
 詳しくは[第4回 - 公開ビュー作成編](https://rightcode.co.jp/blog/information-technology/responder-django-tutorial-4)
 をご覧ください。
