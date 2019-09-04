@@ -32,7 +32,7 @@ Responder(ver. 1.3.1)で作成したアプリケーションのため、バー�
 
 ## アプリケーションの起動(Localhost)
 ```bash
-$ cd responderProject/polls
+$ cd ResponderTutorial/polls
 $ python run.py
 ```
 
