@@ -24,9 +24,9 @@ Responder(ver. 1.3.1)で作成したアプリケーションのため、バー�
 [第2回 - データベース・モデル構築編](https://rightcode.co.jp/blog/information-technology/responder-django-tutorial-2-1)   
 [第3回 - データベース操作編](https://rightcode.co.jp/blog/information-technology/responder-django-tutorial-3-1)   
 [第4回 - 公開ビュー作成編](https://rightcode.co.jp/blog/information-technology/responder-django-tutorial-4)   
-第5回 - 自動テスト導入編 (近日公開)   
-第6回 - 静的ファイル管理編 (近日公開)   
-第7回 - adminページ改良編 (近日公開)   
+[第5回 - 自動テスト導入編](https://rightcode.co.jp/blog/information-technology/responder-django-tutorial-automated-test)   
+[第6回 - 静的ファイル管理編](https://rightcode.co.jp/blog/information-technology/responder-django-static)   
+[第7回 - adminページ改良編](https://rightcode.co.jp/blog/information-technology/responder-django-tutorial-admin-page-improvement-1)   
   
 番外編 - さらなるアプリ改良 (近日公開)
 
